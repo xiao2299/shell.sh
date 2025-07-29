@@ -13,11 +13,7 @@ CHAT_ID="8081396229"
 # === [3] Xóa log đầu ===
 clear
 
-# === [4] Kiểm tra nếu game đã chạy ===
-if pidof "$APP" >/dev/null; then
-    echo "❌ Game $APP đang chạy. Vui lòng tắt trước khi inject!"
-    exit 1
-fi
+
 
 # === [5] Xác định kiến trúc CPU (ABI) ===
 ABI=$(dumpsys package "$APP" | grep primaryCpuAbi | cut -d= -f2 | tr -d ' ')
